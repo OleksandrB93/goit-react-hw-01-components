@@ -1,25 +1,26 @@
 import PropTypes from "prop-types";
+import { TransitionContainer,Thead, Tbody,Td,Tr } from "./TransactionHistory.styled";
 
 export default function TransactionHistory({ items }) {
   return (
-    <table className="transaction-history">
-      <thead>
+    <TransitionContainer>
+      <Thead>
         <tr>
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
-      </thead>
-      <tbody>
+      </Thead>
+      <Tbody>
         {items.map((tr) => (
-          <tr key={tr.id}>
-            <td>{tr.type}</td>
-            <td>{tr.amount}</td>
-            <td>{tr.currency}</td>
-          </tr>
+          <Tr key={tr.id}>
+            <Td>{tr.type}</Td>
+            <Td>{tr.amount}</Td>
+            <Td>{tr.currency}</Td>
+          </Tr>
         ))}
-      </tbody>
-    </table>
+      </Tbody>
+    </TransitionContainer>
   );
 }
 
